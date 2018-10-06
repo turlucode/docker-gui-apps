@@ -1,0 +1,17 @@
+FROM ubuntu:18.04
+
+MAINTAINER Athanasios Tasoglou <athanasios@tasoglou.net>
+LABEL Description=\"Mozilla Firefox web browser App\" Vendor=\"TurluCode\" Version=\"1.0\"
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get install -y \
+pulseaudio alsa-utils firefox && \
+rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -g $USER_GROUP_ID turlucode || true
+RUN useradd -m -u $USER_ID -g $USER_GROUP_ID -s /bin/bash turlucode
+USER turlucode
+WORKDIR /home/turlucode
+
+CMD /usr/bin/firefox

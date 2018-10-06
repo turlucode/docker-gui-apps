@@ -1,0 +1,22 @@
+FROM $BASE_IMG
+
+MAINTAINER Athanasios Tasoglou <athanasios@tasoglou.net>
+LABEL Description=\"Mendeley Desktop App\" Vendor=\"TurluCode\" Version=\"1.0\"
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get install -y \
+libnss3 libx11-xcb1 libxcomposite1 libxcursor-dev libxdamage1 libxi6 libxtst6 libfreetype6-dev libfontconfig1-dev libxrandr2 libasound2 xkb-data \
+wget python gconf2 desktop-file-utils apt-transport-https ca-certificates && \
+wget --no-check-certificate https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest && \
+mv mendeleydesktop-latest mendeleydesktop-latest.deb && \
+dpkg -i mendeleydesktop-latest.deb && \
+rm -rf /var/lib/apt/lists/* && \
+rm mendeleydesktop-latest.deb
+
+RUN groupadd -g $USER_GROUP_ID $USER_NAME || true
+RUN useradd -m -u $USER_ID -g $USER_GROUP_ID -s /bin/bash $USER_NAME
+USER $USER_NAME
+WORKDIR /home/$USER_NAME
+
+CMD /usr/bin/mendeleydesktop
