@@ -33,8 +33,8 @@ Each app needs different arguments in order to run. Run examples are localed at 
 
 _More info inside each app's readme_
 
-- Mendeley
-- Firefox
+- [Mendeley](https://github.com/turlucode/docker-gui-apps/tree/master/mendeley)
+- [Firefox](https://github.com/turlucode/docker-gui-apps/tree/master/firefox)
 
 # Issues and Contributing
   - Please let us know by [filing a new 
