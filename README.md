@@ -22,7 +22,7 @@ Use the proviced `Makefile` to build the deseried app:
 # Prints Help
 make
 # E.g. Build Firefox
-make firefox
+make firefox_x11
 ````
 
 ## Run App
