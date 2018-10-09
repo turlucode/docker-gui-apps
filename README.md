@@ -9,7 +9,7 @@ Some packages require GL support and thus rely on the graphics drivers of the ho
  - [NVIDIA-X11] where there is GL support
  - [X11] where there is no GL support
 
- Currently we support only NVIDIA via `nvidia-docker` __v1__.
+ So, to run GL apps, we currently support only NVIDIA via `nvidia-docker` __v1__.
 
 ### `nvidia-docker`
 
