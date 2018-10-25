@@ -46,7 +46,7 @@ _video0_ is usually the default. It might be different in your case, so just mak
   libGL error: failed to load driver: swrast
   Could not initialize GLX
   ````
-  Then run `xhost local:root` and try again.
+  Then run `xhost si:localuser:$USER` or worst case `xhost local:root` and try again.
 
 - Shared Memory Size crashes:
     To prevent crashes from happening when running Firefox inside a Docker container, the size of the shared memory located at /dev/shm must be increased. The issue is documented [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1338771#c10).
