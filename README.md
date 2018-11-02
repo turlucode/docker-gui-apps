@@ -9,11 +9,11 @@ Some packages require GL support and thus rely on the graphics drivers of the ho
  - [NVIDIA-X11] where there is GL support
  - [X11] where there is no GL support
 
- So, to run GL apps, we currently support only NVIDIA via `nvidia-docker` __v1__.
+ So, to run GL apps, we currently support only NVIDIA via `nvidia-docker` __v2__.
 
 ### `nvidia-docker`
 
-To install `nvidia-docker` v1 [follow this](https://github.com/turlucode/ros-docker-gui/blob/master/Readme.md#nvidia-graphics-card). For more info visit the [official NVIDIA support](https://github.com/NVIDIA/nvidia-docker).
+To install `nvidia-docker` v2.x [follow this](https://github.com/turlucode/ros-docker-gui#nvidia-graphics-card). For more info visit the [official NVIDIA support](https://github.com/NVIDIA/nvidia-docker).
 
 # Build App
 
@@ -21,6 +21,7 @@ Use the proviced `Makefile` to build the deseried app:
 ````
 # Prints Help
 make
+
 # E.g. Build Firefox
 make firefox_x11
 ````
