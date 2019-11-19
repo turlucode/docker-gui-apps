@@ -10,10 +10,10 @@ USER_GROUP_ID=$(id -g)
 # Choose base image
 BASE_IMG=$1
 if [ $1 = "nvidia-ubuntu" ]; then
-    BASE_IMG="nvidia/opengl:1.0-glvnd-devel-ubuntu16.04"
+    BASE_IMG="nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04"
     TAG=nvidia
 elif [ $1 = "ubuntu" ]; then
-    BASE_IMG="ubuntu:16.04"
+    BASE_IMG="ubuntu:18.04"
     TAG=x11
 else
     echo "Oops! Critical error! Should not happen! Check script input!"
